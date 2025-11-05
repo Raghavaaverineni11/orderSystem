@@ -27,7 +27,7 @@ public class PullRequestController {
 
     @GetMapping("/CheckingHttpEntity")
     public HttpEntity<String> check(){
-        String a="raghav http entity verified";
+        String a="http entity verified";
         HttpHeaders h=new HttpHeaders();
         h.add("name","verifyheader");
         return new HttpEntity(a,h);
