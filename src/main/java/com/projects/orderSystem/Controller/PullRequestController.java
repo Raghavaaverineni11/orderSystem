@@ -1,6 +1,8 @@
 package com.projects.orderSystem.Controller;
 
 
+import com.projects.orderSystem.Entity.Order;
+import com.projects.orderSystem.Repository.OrderRepository;
 import com.projects.orderSystem.Service.Booking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -18,6 +20,9 @@ public class PullRequestController {
 
     @Autowired
     Booking bookingservice;
+
+    @Autowired
+    OrderRepository  repo;
 
     @GetMapping("/ListAllOrders")
     public ResponseEntity<?> getAllOrder(){
@@ -41,6 +46,12 @@ public class PullRequestController {
     @GetMapping("/param")
     public ResponseEntity<?>  question(@RequestParam("q") int a){
         return ResponseEntity.ok("the request param passed is "+a);
+    }
+
+    @GetMapping("/order_info")
+    public ResponseEntity<?> get_orders(){
+        List<Order> list=repo.order_info();
+        return ResponseEntity.ok().body(list);
     }
 
 
