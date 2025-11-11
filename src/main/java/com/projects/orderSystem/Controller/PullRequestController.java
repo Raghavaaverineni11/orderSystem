@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class PullRequestController {
@@ -56,6 +57,18 @@ public class PullRequestController {
         repo.save(order);
         return ResponseEntity.ok().body("order successfully saved");
     }
+
+
+    @GetMapping("/getOrderbyID/{id}")
+    public ResponseEntity<?> getOrderById(@PathVariable("id") int id) {
+        Optional<Order> order = repo.findById(id);
+        if (order.isPresent()) {
+            return ResponseEntity.ok(order);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
 
 
