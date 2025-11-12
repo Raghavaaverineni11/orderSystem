@@ -4,6 +4,7 @@ package com.projects.orderSystem.Controller;
 import com.projects.orderSystem.Entity.Order;
 import com.projects.orderSystem.Repository.OrderRepository;
 import com.projects.orderSystem.Service.Booking;
+import com.projects.orderSystem.Service.Delivery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -21,6 +22,9 @@ public class PullRequestController {
 
     @Autowired
     OrderRepository  repo;
+
+    @Autowired
+    Delivery delivery;
 
     @GetMapping("/ListAllOrders")
     public ResponseEntity<?> getAllOrder(){
@@ -67,6 +71,11 @@ public class PullRequestController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/getDeliveryguyone")
+    public ResponseEntity<String> getguy(){
+        return ResponseEntity.ok(delivery.getDeliveryone());
     }
 
 
