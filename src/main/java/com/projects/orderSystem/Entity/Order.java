@@ -16,10 +16,10 @@ public class Order {
     @Column(name="order_id")
     private int orderId;
 
-    @Column(name="order_name")
+    @Column(name="order_status")
     private String orderStatus;
 
     @Column(name="order_name")
-    private String orderName;
+    private int orderName;
 
 }

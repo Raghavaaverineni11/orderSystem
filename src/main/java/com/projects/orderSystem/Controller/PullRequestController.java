@@ -4,16 +4,15 @@ package com.projects.orderSystem.Controller;
 import com.projects.orderSystem.Entity.Order;
 import com.projects.orderSystem.Repository.OrderRepository;
 import com.projects.orderSystem.Service.Booking;
+import com.projects.orderSystem.Service.Delivery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class PullRequestController {
@@ -23,6 +22,9 @@ public class PullRequestController {
 
     @Autowired
     OrderRepository  repo;
+
+    @Autowired
+    Delivery delivery;
 
     @GetMapping("/ListAllOrders")
     public ResponseEntity<?> getAllOrder(){
@@ -53,6 +55,32 @@ public class PullRequestController {
         List<Order> list=repo.order_info();
         return ResponseEntity.ok().body(list);
     }
+
+    @PostMapping("/addOrder")
+    public ResponseEntity<?> add_orders(@RequestBody Order order){
+        repo.save(order);
+        return ResponseEntity.ok().body("order successfully saved");
+    }
+
+
+    @GetMapping("/getOrderbyID/{id}")
+    public ResponseEntity<?> getOrderById(@PathVariable("id") int id) {
+        Optional<Order> order = repo.findById(id);
+        if (order.isPresent()) {
+            return ResponseEntity.ok(order);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/getDeliveryguyone")
+    public ResponseEntity<String> getguy(){
+        return ResponseEntity.ok(delivery.getDeliveryone());
+    }
+
+
+
+
 
 
 
