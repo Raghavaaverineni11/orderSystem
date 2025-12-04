@@ -17,4 +17,6 @@ public class Delivery {
 
     String orderID="1234445";
 
+    String o="12345";
+
 }
