@@ -19,4 +19,6 @@ public class Delivery {
 
     String o="12345";
 
+    String a="123";
+
 }
