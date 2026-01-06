@@ -15,6 +15,7 @@ public class Booking {
 
     List<String> names= Arrays.asList("raghava","rakesh","Ajay","vadina","nani","ashwitha");
     List<String> orderSrtatus =Arrays.asList("Delivered","IN the Way","Shipped","Dispatched");
+    List<String> DSA=Arrays.asList("two pointer","BinarySearch","bruteForce");
 
 
 
