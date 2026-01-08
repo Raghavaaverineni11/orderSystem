@@ -17,8 +17,6 @@ public class PullRequestController {
 
 
 
-    @Autowired
-    private Users users;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
