@@ -26,4 +26,7 @@ public class UsersController {
         return new ResponseEntity<>(us, HttpStatus.OK);
 
     }
+
+    @GetMapping("findUsers")
+    public
 }
