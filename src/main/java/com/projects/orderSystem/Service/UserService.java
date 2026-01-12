@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Slf4j
 @Service
 public class UserService {
@@ -43,6 +45,10 @@ public class UserService {
         }
 
         return usersRepository.save(users);
+    }
+
+    public List<Users> allUsers(){
+        return usersRepository.findAll();
     }
 
 }

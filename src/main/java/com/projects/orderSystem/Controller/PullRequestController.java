@@ -17,8 +17,6 @@ public class PullRequestController {
 
 
 
-    @Autowired
-    private Users users;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -53,6 +51,7 @@ public class PullRequestController {
     }
 
     String teach="Nikhikl";
+    String date="jan 08";
     
 
 
