@@ -2,6 +2,7 @@ package com.projects.orderSystem.Controller;
 
 
 import com.projects.orderSystem.Entity.Users;
+import com.projects.orderSystem.Repository.UsersRepository;
 import com.projects.orderSystem.Service.UserService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,10 @@ public class UsersController {
     @Autowired
     UserService  userService;
 
-    @GetMapping("Users-Roles")
+    @Autowired
+    UsersRepository usersRepository;
+
+    @GetMapping("find-Users")
     public ResponseEntity<?>  getUserRoles(){
 
         List<Users>  us = userService.allUsers();
@@ -27,6 +31,11 @@ public class UsersController {
 
     }
 
-    @GetMapping("findUsers")
+    @GetMapping("AdminUsers")
+    public ResponseEntity<?>  getUsersbyRole()
+    {
+        List<Users> admins=usersRepository.findByRole("ROLE_ADMIN");
 
+        return new ResponseEntity<>(admins,HttpStatus.OK);
+    }
 }
