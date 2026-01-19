@@ -1,6 +1,7 @@
 package com.projects.orderSystem.Controller;
 
 
+import com.projects.orderSystem.Entity.Orders;
 import com.projects.orderSystem.Entity.Users;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class OrderController {
     @GetMapping("AllOrders")
     public ResponseEntity<List<Users>>  getAllOrders(){
 
-
+       List<Orders> l=
 
     }
 }
