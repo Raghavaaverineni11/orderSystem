@@ -5,6 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="menu")
+@Tagitble(name="menu")
 public class Menu {
 }
