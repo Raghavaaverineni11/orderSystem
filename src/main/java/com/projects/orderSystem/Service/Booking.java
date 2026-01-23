@@ -17,6 +17,7 @@ public class Booking {
     List<String> orderSrtatus =Arrays.asList("Delivered","IN the Way","Shipped","Dispatched");
     List<String> DSA=Arrays.asList("two pointer","BinarySearch","bruteForce");
     List<String> Timeline=Arrays.asList("a","b","c","d");
+    int arr[]={1,2,3,4,5,6,7,8,9};
 
 
 
