@@ -21,4 +21,10 @@ public class MenuController {
     public void addToMenu(){
 
     }
+
+    @PostMapping("/AddtoWeekendSpecials")
+    public void addWeekend()
+    {
+
+    }
 }
