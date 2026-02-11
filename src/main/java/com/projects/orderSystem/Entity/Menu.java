@@ -12,8 +12,10 @@ public class Menu {
     public String name;
 
     List<String> menuitems = new ArrayList<>();
-    menuitems.add("BreakFast");
 
+    {
+        menuitems.add("BreakFast");
+    }
 
 
 
