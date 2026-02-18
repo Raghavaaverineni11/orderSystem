@@ -15,6 +15,8 @@ public class Menu {
 
     {
         menuitems.add("BreakFast");
+        menuitems.add("Lunch");
+        menuitems.add("Dinner");
     }
 
 
