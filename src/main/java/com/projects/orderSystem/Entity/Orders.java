@@ -14,4 +14,9 @@ public class Orders {
     int a=10;
     int b=15;
 
+    public void sum(int a,int b){
+        System.out.println(a+b);
+        System.out.println();
+    }
+
 }
